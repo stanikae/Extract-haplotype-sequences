@@ -11,14 +11,12 @@ if (!require(dplyr, quietly=TRUE)) {
 }
 
 # set path
-path <- file.path("c:/Users/Stanford/Documents/PostDoc_SBIMB/ShayneHaplotypes")
-infile <- file.path(path, "hla.37.phased.xlsx")
-#outPaths <- file.path(path,x, ".data.txt")
-#dir.create(file.path(path, "patientData"), recursive = T)
+path <- file.path("/path/to/directory/with .xlsx file")
+infile <- file.path(path, "phased_data.xlsx") # see example file in example directory
 hpos <- readxl::read_excel(infile, sheet = 1, n_max = 451)
-
 nameVector <- colnames(hpos)[5:44]
 
+# function to split haplotypes and save data for each individual in separate txt files
 splitAlleles = function(x, infile){
   y <- tolower(x)
   y <- infile %>% select(POS, RSID, REF, x)
