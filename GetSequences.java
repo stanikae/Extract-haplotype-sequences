@@ -13,13 +13,10 @@ public class GetSequences {
     public static void main(String[]args)throws Exception{
         
         ArrayList<String> searchLists= new ArrayList<String>();
-        Scanner input = new Scanner (new File("C:\\Users\\Stanford\\Documents\\PostDoc_SBIMB\\ShayneHaplotypes\\refDPB1.fa"));
-        Scanner in = new Scanner (new File("C:\\Users\\Stanford\\Documents\\PostDoc_SBIMB\\ShayneHaplotypes\\NP1070_data_rev.txt"));
-        PrintWriter file =new PrintWriter("C:\\Users\\Stanford\\Documents\\PostDoc_SBIMB\\ShayneHaplotypes\\NP1070_pat.fa");
-        //StringBuilder sb=new StringBuilder("Hello ");
-        //sb.append("Java");//now original string is changed  
-        //System.out.println(sb);//prints Hello Java  
-        
+        Scanner input = new Scanner (new File("/path/to/refDPB1.fa"));
+        Scanner in = new Scanner (new File("/path/to/patient haplotype data"));
+        PrintWriter file =new PrintWriter("/path/to/output-file");
+                
         StringBuilder sb=new StringBuilder();
         
         //get the SNP positions and load them to array list
