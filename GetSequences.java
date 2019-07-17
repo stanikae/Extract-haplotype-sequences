@@ -48,7 +48,7 @@ public class GetSequences {
         for(String j: searchLists){
                 String A[]=j.split(",");
                 int x = Integer.valueOf(A[0]);
-                int x1 = x-33042876;
+                int x1 = x-33042876;        // to replace hard-coded value with a variable
                 int x2 = A[2].length();
                 y = sb.substring(x1, x1+x2);
                 System.out.println(x+"\t"+y);
