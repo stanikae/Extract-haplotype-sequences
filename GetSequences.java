@@ -29,9 +29,6 @@ public class GetSequences {
         }
         String str = "";
         String seq = "";
-        //int x2 = 0;
-        //String mat = "";
-        //char y ='\0'; //initializing empty char
         String y="";
         
         //get the multiple line fasta file and concantenate into one contiguous sequence
@@ -40,13 +37,11 @@ public class GetSequences {
             if(seq.startsWith(">")){
                 continue;
             }
-            //StringBuilder sb=new StringBuilder(seq);
             sb.append(seq);
         }
         
         
         int len = sb.length();
-        //System.out.println(sb);
         System.out.println(len);
         
         
@@ -54,27 +49,11 @@ public class GetSequences {
                 String A[]=j.split(",");
                 int x = Integer.valueOf(A[0]);
                 int x1 = x-33042876;
-                //if(A[2].length() > 1){
-                    //y = sb.charAt(x1);
-                //    int x2 = A[2].length();
-                //    y = sb.substring(x1, x1+x2);
-                    //sb.replace(x1, x1+x2, A[4]);
-                    //System.out.println(x+"\t"+y);
-                //} else {
-                //    y = sb.substring(x1, x1+1);
-                    //sb.replace(x1, x1, A[4]);
-                //}
                 int x2 = A[2].length();
                 y = sb.substring(x1, x1+x2);
                 System.out.println(x+"\t"+y);
-                sb.replace(x1, x1+x2, A[5]);
-                //file.println(j+","+y);
-                //file.print(sb);
-                
-                //replace SNPs
-                //sb.replace(x1, x1+x2, A[4]);
-                //file.print(sb);
-            }
+                sb.replace(x1, x1+x2, A[5]); //replace SNPs
+        }
         file.print(sb);
         file.close();
     }
